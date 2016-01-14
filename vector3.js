@@ -1,4 +1,4 @@
-(function( window, document ){
+(function( self ){
 
 	var Vector3 = function( x, y, z ){
 
@@ -171,6 +171,24 @@
 
 	Vector3.fn.init.prototype = Vector3.fn;
 
-	window.Vector3 = Vector3;
+	if( typeof define !== "undefined" && define instanceof Function && define.amd != undefined ){
 
-})(window, document);
+		define(function(){
+
+			return Vector3;
+
+		});
+
+	}
+	else if( typeof module !== "undefined" && module.exports ){
+
+		module.exports = Vector3;
+
+	}
+	else if( self != undefined ){
+
+		self.Vector3 = Vector3;
+
+	};
+
+})( this || {} );
