@@ -10,20 +10,28 @@ Vector3 JavaScript library
 ### constructor
 ```javascript
 	new Vector3(x, y, z);
+	// or
+	new Vector(otherVector);
 ```
 
 ### add
 ```javascript
+	vector.add(x, y, z);
+	// or
 	vector.add(otherVector);
 ```
 
 ### substract
 ```javascript
+	vector.substract(x, y, z);
+	// or
 	vector.substract(otherVector);
 ```
 
 ### multiply
 ```javascript
+	vector.multiply(x, y, z);
+	// or
 	vector.multiply(otherVector);
 ```
 
@@ -34,6 +42,8 @@ Vector3 JavaScript library
 
 ### divide
 ```javascript
+	vector.divide(x, y, z);
+	// or
 	vector.divide(otherVector);
 ```
 
@@ -79,5 +89,7 @@ Vector3 JavaScript library
 
 ### clone
 ```javascript
+	vector.rotate(x, y, z);
+	// or
 	vector.clone(otherVector);
 ```

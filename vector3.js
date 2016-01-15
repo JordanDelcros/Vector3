@@ -10,7 +10,7 @@
 		constructor: Vector3,
 		init: function( x, y, z ){
 
-			if( x.constructor === Vector3 ){
+			if( x instanceof Vector3 ){
 
 				this.clone(x);
 
@@ -26,38 +26,62 @@
 			return this;
 
 		},
-		add: function( vector ){
+		add: function( x, y, z ){
 
-			this.x += vector.x;
-			this.y += vector.y;
-			this.z += vector.z;
+			if( x instanceof Vector3 ){
 
-			return this;
+				this.x += x.x;
+				this.y += x.y;
+				this.z += x.z;
 
-		},
-		substract: function( vector ){
+			}
+			else {
 
-			this.x -= vector.x;
-			this.y -= vector.y;
-			this.z -= vector.z;
+				this.x += x;
+				this.y += y;
+				this.z += z;
 
-			return this;
-
-		},
-		multiply: function( vector ){
-
-			this.x *= vector.x;
-			this.y *= vector.y;
-			this.z *= vector.z;
+			};
 
 			return this;
 
 		},
-		divide: function( vector ){
+		substract: function( x, y, z ){
 
-			this.x /= vector.x;
-			this.y /= vector.y;
-			this.z /= vector.z;
+			if( x instanceof Vector3 ){
+
+				this.x -= x.x;
+				this.y -= x.y;
+				this.z -= x.z;
+
+			}
+			else {
+
+				this.x -= x;
+				this.y -= y;
+				this.z -= z;
+
+			};
+
+			return this;
+
+		},
+		multiply: function( x, y, z ){
+
+			if( x instanceof Vector3 ){
+
+				this.x *= x.x;
+				this.y *= x.y;
+				this.z *= x.z;
+
+			}
+			else {
+
+				this.x *= x;
+				this.y *= y;
+				this.z *= z;
+
+			};
 
 			return this;
 
@@ -67,6 +91,26 @@
 			this.x *= number;
 			this.y *= number;
 			this.z *= number;
+
+			return this;
+
+		},
+		divide: function( x, y, z ){
+
+			if( x instanceof Vector3 ){
+
+				this.x /= x.x;
+				this.y /= x.y;
+				this.z /= x.z;
+
+			}
+			else {
+
+				this.x /= x;
+				this.y /= y;
+				this.z /= z;
+
+			};
 
 			return this;
 
@@ -118,14 +162,20 @@
 			return this.x === vector.x && this.y === vector.y && this.z === vector.z;
 
 		},
-		rotate: function( vector ){
+		rotate: function( x, y, z ){
+
+			if( !x instanceof Vector3 ){
+
+				x = new Vector3(x, y, z);
+
+			};
 
 			var x1 = this.x;
 			var y1 = this.y;
 			var z1 = this.z;
-			var angleX = vector.x / 2;
-			var angleY = vector.y / 2;
-			var angleZ = vector.z / 2;
+			var angleX = x.x / 2;
+			var angleY = x.y / 2;
+			var angleZ = x.z / 2;
 
 			var cx = Math.cos(angleX);
 			var cy = Math.cos(angleY);

@@ -1,6 +1,6 @@
 {
   "name": "vector-3",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vector3 JavaScript library",
   "main": "vector3.js",
   "scripts": {
