@@ -84,12 +84,12 @@ Vector3 JavaScript library
 
 ### rotate
 ```javascript
+	vector.rotate(x, y, z);
+	// or
 	vector.rotate(otherVector);
 ```
 
 ### clone
 ```javascript
-	vector.rotate(x, y, z);
-	// or
 	vector.clone(otherVector);
 ```
