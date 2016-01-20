@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/vector-3.svg)](https://www.npmjs.com/package/vector-3)
+
 # Vector3
 
 Vector3 JavaScript library
